@@ -17,12 +17,12 @@ void			define_index(char *name, t_data **data, int *i_called,
 {
 	if ((*i_called = index_label_called(name, (*data)->lst_lines)) == -1)
 	{
-		error(*data, "label error\n");
+		ft_out(*data, "label error\n");
 		return ;
 	}
 	if ((*i_declared = index_label_declared(name, (*data)->lst_lines)) == -1)
 	{
-		error(*data, "label error\n");
+		ft_out(*data, "label error\n");
 		return ;
 	}
 }

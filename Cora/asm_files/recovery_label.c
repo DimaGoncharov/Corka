@@ -16,7 +16,7 @@ static int		save_label(char *name, t_data **data)
 {
 	t_lab	lab;
 
-	ini_lab(&lab, data);
+	initlab(&lab, data);
 	lab.name = ft_strdup(name);
 	if (exist_label(name, data))
 		ft_lstdbladd_head((*data)->label_kw, &lab, sizeof(t_lab));

@@ -18,14 +18,14 @@ int			main(int argc, char **argv)
 	t_data	*data;
 
 	i = 0;
-	data_initializer(&data);
+	initializer(&data);
 	if (argc != 1)
 	{
-		store_file(argv, data, &i);
-		file_manager(data, i);
+		head_file(argv, data, &i);
+		changer(data, i);
 	}
 	else
-		error(data, "Please provide a .s file");
+		ft_out(data, "Please provide a .s file");
 	if (!(recovery(data)))
 	{
 		free_all_data(data);

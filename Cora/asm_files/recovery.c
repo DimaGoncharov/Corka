@@ -21,7 +21,7 @@ static int		check_line(char *line, t_data **data)
 
 	i = 0;
 	name = NULL;
-	ini_data_line(&dline, index_line);
+	initdataline(&dline, index_line);
 	while (line[i] && line[i] != ' ' && line[i] != '\t')
 		i++;
 	name = ft_strsub(line, 0, i);

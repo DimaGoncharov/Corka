@@ -117,27 +117,27 @@ typedef	void		(*t_trad)(char *, char **, t_data **, int);
 **********************  Initializer  *******************
 */
 
-void				data_initializer(t_data **data);
-void				ini_lab(t_lab *lab, t_data **data);
-void				ini_recup(t_recup **recup);
-void				ini_data_line(t_data_line *dline, int index_line);
-void				ini_sum_args(t_sum_args *data);
-void				ini_tmp1(t_tmp1 *tmp1);
-void				ini_tmp2(t_tmp2 *tmp2);
+void				initializer(t_data **data);
+void				initlab(t_lab *lab, t_data **data);
+void				initrecup(t_recup **recup);
+void				initdataline(t_data_line *dline, int index_line);
+void				initsumary_args(t_sum_args *data);
+void				inittmp1(t_tmp1 *tmp1);
+void				inittmp2(t_tmp2 *tmp2);
 
 /*
 **********************  File Cleaning  *****************
 */
 
-int					store_file(char **argv, t_data *data, int *i);
-int					file_manager(t_data *data, int nb_lines);
-int					ft_iscomment(int c);
-int					ft_islabelchar(int c);
-int					header_manager(t_data *data);
-int					label_manager(t_data *data);
-int					name_manager(t_data *data, int *i, int *j);
-int					comment_manager(t_data *data, int *i, int *j);
-int					error(t_data *data, char *str);
+int					head_file(char **argv, t_data *data, int *i);
+int					changer(t_data *data, int nb_lines);
+int					ft_comm(int c);
+int					ft_label_char(int c);
+int					ft_manag_head(t_data *data);
+int					ft_manag_lab(t_data *data);
+int					ft_manag_name(t_data *data, int *i, int *j);
+int					ft_manag_comm(t_data *data, int *i, int *j);
+int					ft_out(t_data *data, char *str);
 
 /*
 **********************  Recovery  **********************

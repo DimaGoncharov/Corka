@@ -69,7 +69,7 @@ void	sum_args(t_recup *recup, char **hexa)
 	char		*tmp;
 
 	i = 0;
-	ini_sum_args(&data);
+	initsumary_args(&data);
 	tmp = NULL;
 	while (recup->args_tab[i])
 	{
@@ -97,7 +97,7 @@ void	tmp_trad_to_str(t_data **data)
 	t_tmp1	temp;
 
 	tmp = ((*data)->lst_recup)->tail;
-	ini_tmp1(&temp);
+	inittmp1(&temp);
 	while (tmp != NULL)
 	{
 		if ((*data)->tmp_trad == NULL)

@@ -80,7 +80,7 @@ int			check_args(char **args_tab, int op_code, t_data **data)
 	to_check = 0;
 	if (nb_arg(args_tab) != g_op_tab[op_code - 1].nb_param)
 	{
-		error(*data, "Number of param for this instruction is wrong");
+		ft_out(*data, "Number of param for this instruction is wrong");
 		return (0);
 	}
 	if (!(valid_args(args_tab, op_code, &to_check)))

@@ -1,14 +1,4 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   label_1.c                                          :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: mpaincha <marvin@42.fr>                    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/09/29 15:59:53 by mpaincha          #+#    #+#             */
-/*   Updated: 2016/09/29 16:14:55 by mpaincha         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
+
 
 #include "asm.h"
 
@@ -84,7 +74,7 @@ static char		*trad_label_called(char *lbl_called, t_data **data)
 	tmp = NULL;
 	if (exist_label(lbl_called, data))
 	{
-		error(*data, "label error\n");
+		ft_out(*data, "label error\n");
 		return (NULL);
 	}
 	define_index(lbl_called, data, &i_called, &i_declared);
@@ -109,7 +99,7 @@ void			trad_dir_label(t_data **data)
 
 	i = 0;
 	j = 0;
-	ini_tmp2(&temp);
+	inittmp2(&temp);
 	while ((*data)->tmp_trad[i])
 	{
 		if ((*data)->tmp_trad[i] == '%')

@@ -1,14 +1,4 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: kvignau <marvin@42.fr>                     +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2016/01/04 10:52:32 by kvignau           #+#    #+#              #
-#    Updated: 2016/12/06 14:58:49 by kvignau          ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
+
 
 NAME = ../asm
 
@@ -16,15 +6,15 @@ FLAGS = -Wall -Werror -Wextra
 
 SRC = main.c
 SRC += op.c
-SRC += store_file.c
-SRC += data_initializer.c
-SRC += file_manager.c
-SRC += ft_iscomment.c
+SRC += head_file.c
+SRC += initializer.c
+SRC += changer.c
+SRC += ft_comm.c
 SRC += recovery.c
-SRC += header_manager.c
-SRC += name_manager.c
-SRC += comment_manager.c
-SRC += error.c
+SRC += ft_manag_head.c
+SRC += ft_manag_name.c
+SRC += ft_manag_comm.c
+SRC += ft_out.c
 SRC += free_all_data.c
 SRC += recovery_instruc.c
 SRC += noleaks.c
@@ -33,14 +23,14 @@ SRC += check_type.c
 SRC += which_arg.c
 SRC += trad.c
 SRC += trad_reg_ind.c
-SRC += ft_islabelchar.c
+SRC += ft_label_char.c
 SRC += common.c
-SRC += label_manager.c
+SRC += ft_manag_lab.c
 SRC += label.c
 SRC += label_1.c
 SRC += final_trad.c
 SRC += create_file.c
-SRC += data_initializer_1.c
+SRC += initializer1.c
 SRC += recovery_label.c
 SRC += define_arg.c
 SRC += trad_dir.c
