@@ -31,7 +31,7 @@ static int	valid_args(char **args_tab, int op_code, int *to_check)
 	int		type;
 
 	type = 0;
-	if (!(type = recover_args(args_tab, to_check)))
+	if (!(type = arg_vosstanovilka(args_tab, to_check)))
 	{
 		print_args_tab(args_tab);
 		return (0);
@@ -41,7 +41,7 @@ static int	valid_args(char **args_tab, int op_code, int *to_check)
 	return (1);
 }
 
-int			recover_args(char **args_tab, int *to_check)
+int			arg_vosstanovilka(char **args_tab, int *to_check)
 {
 	int		i;
 	int		type;

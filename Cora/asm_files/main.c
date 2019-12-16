@@ -26,7 +26,7 @@ int			main(int argc, char **argv)
 	}
 	else
 		ft_out(data, "Please provide a .s file");
-	if (!(recovery(data)))
+	if (!(vosstanovilka(data)))
 	{
 		free_all_data(data);
 		return (0);

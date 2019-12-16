@@ -24,7 +24,7 @@ static int		check_vm_number_exist(t_elem *tmp, unsigned int vm_num,
 		{
 			exist = 1;
 			if (core->options.stealth == 0)
-				ft_printf("un processus dit que le joueur %d(%s) est en vie\n",
+				ft_printf("Someone (process) say that player %d(%s) is alive\n",
 					((t_champ *)(tmp->content))->id,
 					((t_champ *)(tmp->content))->name);
 		}

@@ -41,7 +41,7 @@ static int		check_line(char *line, t_data **data)
 	return (1);
 }
 
-int				recovery(t_data *data)
+int				vosstanovilka(t_data *data)
 {
 	int		i;
 

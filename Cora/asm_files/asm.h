@@ -143,8 +143,8 @@ int					ft_out(t_data *data, char *str);
 **********************  Recovery  **********************
 */
 
-int					recovery(t_data *data);
-int					recover_args(char **args_tab, int *to_check);
+int					vosstanovilka(t_data *data);
+int					arg_vosstanovilka(char **args_tab, int *to_check);
 int					label_valid(char *name);
 int					check_label(char **name, t_data **data, t_data_line *line);
 int					check_instruct(char *line, char **name, t_data **data,
