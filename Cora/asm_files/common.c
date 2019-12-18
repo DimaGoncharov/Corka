@@ -12,7 +12,7 @@
 
 #include "asm.h"
 
-void	ft_strtrim_tab(char **args_tab)
+void	ftstrtrmtb(char **args_tab)
 {
 	int		i;
 	char	*tmp;
@@ -29,7 +29,7 @@ void	ft_strtrim_tab(char **args_tab)
 	}
 }
 
-int		nb_arg(char **args_tab)
+int		arg_nebe(char **args_tab)
 {
 	int		i;
 

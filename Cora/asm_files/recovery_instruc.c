@@ -37,7 +37,7 @@ static void	make_args_tab(char *line, char *name, t_recup *recup)
 	free(tmp);
 	recup->args_tab = ft_strsplit(args, ',');
 	ft_strdel(&args);
-	ft_strtrim_tab(recup->args_tab);
+	ftstrtrmtb(recup->args_tab);
 }
 
 static int	sum_nb_oct(char *hex)
@@ -64,7 +64,7 @@ static int	sum_nb_oct(char *hex)
 	return ((nb_oct / 2) + (nb_dir_lbl * 2));
 }
 
-int			check_instruct(char *line, char **name, t_data **data,
+int			instruct_chekus(char *line, char **name, t_data **data,
 			t_data_line *dline)
 {
 	t_recup	recup;
@@ -77,13 +77,13 @@ int			check_instruct(char *line, char **name, t_data **data,
 		return (0);
 	trad_name_instruct(recup.op_code, &hex.hexa);
 	make_args_tab(line, *name, &recup);
-	if (!(check_args(recup.args_tab, recup.op_code, data)))
+	if (!(args_checkus(recup.args_tab, recup.op_code, data)))
 	{
 		free_t_recup(&recup);
 		return (0);
 	}
 	if (g_op_tab[recup.op_code - 1].octcod == 1)
-		sum_args(&recup, &hex.hexa);
+		args_sumus(&recup, &hex.hexa);
 	trad_args(&recup, &hex.hexa, data, recup.op_code);
 	dline->nb_oct = sum_nb_oct(hex.hexa);
 	label_called(dline, recup.args_tab);

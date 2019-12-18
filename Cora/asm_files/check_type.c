@@ -32,7 +32,7 @@ static int		recover_valid_type(int op_code, int *type)
 	return (*type);
 }
 
-int				verif_type(int type, int op_code)
+int				type_verificator(int type, int op_code)
 {
 	int		valid_type;
 

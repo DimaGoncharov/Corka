@@ -62,7 +62,7 @@ static	int		is_dir_with_label(char *arg)
 	if (arg[++i] == ':')
 	{
 		label = ft_strsub(arg, i + 1, ft_strlen(arg));
-		if (label_valid(label))
+		if (lab_val(label))
 			ret = 1;
 		ft_strdel(&label);
 		return (1);

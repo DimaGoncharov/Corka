@@ -36,7 +36,7 @@ static int	valid_args(char **args_tab, int op_code, int *to_check)
 		print_args_tab(args_tab);
 		return (0);
 	}
-	if (!(verif_type(type, op_code)))
+	if (!(type_verificator(type, op_code)))
 		return (0);
 	return (1);
 }
@@ -51,7 +51,7 @@ int			arg_vosstanovilka(char **args_tab, int *to_check)
 	while (args_tab[i])
 	{
 		type = 0;
-		if ((type = define_type_args(args_tab[i])) == 0)
+		if ((type = args_type_difiner(args_tab[i])) == 0)
 			return (0);
 		if (i == 0)
 			(*to_check) = type;
@@ -73,12 +73,12 @@ int			arg_vosstanovilka(char **args_tab, int *to_check)
 **** 		T_DIR T_DIR T_REG
 */
 
-int			check_args(char **args_tab, int op_code, t_data **data)
+int			args_checkus(char **args_tab, int op_code, t_data **data)
 {
 	int		to_check;
 
 	to_check = 0;
-	if (nb_arg(args_tab) != g_op_tab[op_code - 1].nb_param)
+	if (arg_nebe(args_tab) != g_op_tab[op_code - 1].nb_param)
 	{
 		ft_out(*data, "Number of param for this instruction is wrong");
 		return (0);

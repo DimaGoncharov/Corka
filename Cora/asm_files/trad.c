@@ -50,7 +50,7 @@ void	trad_name_instruct(int op_code, char **hexa)
 void	trad_args(t_recup *recup, char **hexa, t_data **data, int op_code)
 {
 	int						i;
-	static const t_trad		ft_trad[] = {trad_reg, trad_dir, trad_ind};
+	static const t_trad		ft_trad[] = {reg_trad, dir_trad, indus_trad};
 	t_trad					trad;
 
 	i = 0;
@@ -62,7 +62,7 @@ void	trad_args(t_recup *recup, char **hexa, t_data **data, int op_code)
 	}
 }
 
-void	sum_args(t_recup *recup, char **hexa)
+void	args_sumus(t_recup *recup, char **hexa)
 {
 	int			i;
 	t_sum_args	data;

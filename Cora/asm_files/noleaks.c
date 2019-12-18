@@ -42,7 +42,7 @@ void	free_t_recup(t_recup *recup)
 		ft_strdel(&(recup->label_name));
 	if (recup->args_tab)
 	{
-		ft_free2dtab((void **)recup->args_tab, nb_arg(recup->args_tab));
+		ft_free2dtab((void **)recup->args_tab, arg_nebe(recup->args_tab));
 	}
 	if (recup->lst_hexa)
 	{

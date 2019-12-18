@@ -12,7 +12,7 @@
 
 #include "asm.h"
 
-int			is_ind(char *arg)
+int			indyuk(char *arg)
 {
 	int		i;
 
@@ -35,13 +35,13 @@ int			is_dir_label(char *arg, char **label)
 
 	ret = 0;
 	*label = ft_strsub(arg, 2, ft_strlen(arg));
-	if (label_valid(*label))
+	if (lab_val(*label))
 		ret = 2;
 	ft_strdel(label);
 	return (ret);
 }
 
-int			is_dir(char *arg)
+int			direr(char *arg)
 {
 	int		i;
 	char	*label;
@@ -64,7 +64,7 @@ int			is_dir(char *arg)
 	return (T_DIR);
 }
 
-int			is_reg(char *arg)
+int			regger(char *arg)
 {
 	int		i;
 

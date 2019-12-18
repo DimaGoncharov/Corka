@@ -14,33 +14,33 @@
 
 int				args_for_sum(char *arg)
 {
-	if (is_reg(arg))
+	if (regger(arg))
 		return (1);
-	if (is_dir(arg))
+	if (direr(arg))
 		return (2);
-	if (is_ind(arg))
+	if (indyuk(arg))
 		return (3);
 	return (0);
 }
 
-int				define_type_args(char *arg)
+int				args_type_difiner(char *arg)
 {
-	if (is_reg(arg))
+	if (regger(arg))
 		return (T_REG);
-	if (is_ind(arg))
+	if (indyuk(arg))
 		return (T_IND);
-	if (is_dir(arg))
+	if (direr(arg))
 		return (T_DIR);
 	return (0);
 }
 
 int				define_trad_fct(char *arg)
 {
-	if (is_reg(arg))
+	if (regger(arg))
 		return (0);
-	if (is_dir(arg))
+	if (direr(arg))
 		return (1);
-	if (is_ind(arg))
+	if (indyuk(arg))
 		return (2);
 	return (-1);
 }

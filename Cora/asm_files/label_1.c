@@ -72,7 +72,7 @@ static char		*trad_label_called(char *lbl_called, t_data **data)
 	i_called = 0;
 	i_declared = 0;
 	tmp = NULL;
-	if (exist_label(lbl_called, data))
+	if (is_label_real(lbl_called, data))
 	{
 		ft_out(*data, "label error\n");
 		return (NULL);

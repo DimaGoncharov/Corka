@@ -89,7 +89,7 @@ static	void	tmp_trad_dir_label(char *arg, char **hexa)
 	(*hexa) = ft_strjoinandfree(tmp, tmp1, 3);
 }
 
-void			trad_dir(char *arg, char **hexa, t_data **data, int op_code)
+void			dir_trad(char *arg, char **hexa, t_data **data, int op_code)
 {
 	char	*tmp;
 

@@ -25,7 +25,7 @@ void	trad_neg(char *arg, char **to_add)
 	ft_strdel(&tmp);
 }
 
-void	trad_reg(char *arg, char **hexa, t_data **data, int op_code)
+void	reg_trad(char *arg, char **hexa, t_data **data, int op_code)
 {
 	char	*to_add;
 	char	*to_compete;
@@ -63,7 +63,7 @@ void	reduce_hex_ind(char **to_add, int size)
 	ft_strdel(&tmp);
 }
 
-void	trad_ind(char *arg, char **hexa, t_data **data, int op_code)
+void	indus_trad(char *arg, char **hexa, t_data **data, int op_code)
 {
 	char	*to_add;
 	char	*to_compete;

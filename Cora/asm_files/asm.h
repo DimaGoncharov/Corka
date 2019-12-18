@@ -145,30 +145,30 @@ int					ft_out(t_data *data, char *str);
 
 int					vosstanovilka(t_data *data);
 int					arg_vosstanovilka(char **args_tab, int *to_check);
-int					label_valid(char *name);
-int					check_label(char **name, t_data **data, t_data_line *line);
-int					check_instruct(char *line, char **name, t_data **data,
+int					lab_val(char *name);
+int					lab_checker(char **name, t_data **data, t_data_line *line);
+int					instruct_chekus(char *line, char **name, t_data **data,
 					t_data_line *dline);
-void				ft_strtrim_tab(char **args_tab);
-int					check_args(char **args_tab, int op_code, t_data **data);
-int					define_type_args(char *arg);
-int					verif_type(int type, int op_code);
-int					nb_arg(char **args_tab);
-int					exist_label(char *name, t_data **data);
-int					is_dir(char *arg);
-int					is_reg(char *arg);
-int					is_ind(char *arg);
+void				ftstrtrmtb(char **args_tab);
+int					args_checkus(char **args_tab, int op_code, t_data **data);
+int					args_type_difiner(char *arg);
+int					type_verificator(int type, int op_code);
+int					arg_nebe(char **args_tab);
+int					is_label_real(char *name, t_data **data);
+int					direr(char *arg);
+int					regger(char *arg);
+int					indyuk(char *arg);
 
 /*
 **********************  Transformation  ****************
 */
 
-void				sum_args(t_recup *recup, char **hexa);
-void				trad_reg(char *arg, char **hexa, t_data **data,
+void				args_sumus(t_recup *recup, char **hexa);
+void				reg_trad(char *arg, char **hexa, t_data **data,
 					int op_code);
-void				trad_ind(char *arg, char **hexa, t_data **data,
+void				indus_trad(char *arg, char **hexa, t_data **data,
 					int op_code);
-void				trad_dir(char *arg, char **hexa, t_data **data,
+void				dir_trad(char *arg, char **hexa, t_data **data,
 					int op_code);
 void				trad_args(t_recup *recup, char **hexa, t_data **data,
 					int op_code);

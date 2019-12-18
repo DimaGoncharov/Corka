@@ -18,12 +18,12 @@ static int		save_label(char *name, t_data **data)
 
 	initlab(&lab, data);
 	lab.name = ft_strdup(name);
-	if (exist_label(name, data))
+	if (is_label_real(name, data))
 		ft_lstdbladd_head((*data)->label_kw, &lab, sizeof(t_lab));
 	return (1);
 }
 
-int				exist_label(char *name, t_data **data)
+int				is_label_real(char *name, t_data **data)
 {
 	t_elem	*tmp;
 
@@ -37,7 +37,7 @@ int				exist_label(char *name, t_data **data)
 	return (1);
 }
 
-int				label_valid(char *name)
+int				lab_val(char *name)
 {
 	int		i;
 
@@ -54,7 +54,7 @@ int				label_valid(char *name)
 	return (1);
 }
 
-int				check_label(char **name, t_data **data, t_data_line *dline)
+int				lab_checker(char **name, t_data **data, t_data_line *dline)
 {
 	t_recup		recup;
 	char		*tmp;
@@ -64,7 +64,7 @@ int				check_label(char **name, t_data **data, t_data_line *dline)
 	tmp = *name;
 	*name = ft_strsub(*name, 0, ft_strlen(*name) - 1);
 	free(tmp);
-	if (!(label_valid(*name)))
+	if (!(lab_val(*name)))
 	{
 		ft_strdel(name);
 		return (0);
