@@ -25,7 +25,7 @@ static void		set_num(t_var *var, t_options *options, t_dbllist *champ_list)
 	options->bool_vm_number = 1;
 	options->vm_number = ft_atoi(var->argv[var->i]);
 	var->i += 1;
-	var->error = champions_maker(champ_list, options, var);
+	var->error = make_chmps(champ_list, options, var);
 	options->bool_vm_number = 0;
 }
 
@@ -45,7 +45,7 @@ static int		valid_options(t_var *var, t_options *options,
 	else if (var->str[0] == 'd' || var->str[0] == 'n')
 	{
 		if (!var->argv[var->i + 1] || !var->argv[var->i + 2])
-			corewar_usage(0);
+			print_smth(0);
 		else if (var->str[0] == 'd')
 			dump(var, options);
 		else if (var->str[0] == 'n')
@@ -62,7 +62,7 @@ static void		too_many_champ(t_var *var)
 	var->error = 0;
 }
 
-int				options_checkers(int argc, char **argv, t_options *options,
+int				chk_options(int argc, char **argv, t_options *options,
 	t_dbllist *champ_list)
 {
 	t_var		var;
@@ -84,7 +84,7 @@ int				options_checkers(int argc, char **argv, t_options *options,
 				return (0);
 		}
 		else
-			var.error = champions_maker(champ_list, options, &var);
+			var.error = make_chmps(champ_list, options, &var);
 		var.i += 1;
 	}
 	if (var.error == 0)

@@ -45,7 +45,7 @@ int		add_ind_reg(unsigned char *board, t_proc *c_proc, int v, int *reg_nb)
 	{
 		add = (c_proc->r[reg_nb2] + p1) % IDX_MOD;
 		if (v == 1)
-			cmd_verbose_sti(board, c_proc, p1, c_proc->r[reg_nb2]);
+			versti(board, c_proc, p1, c_proc->r[reg_nb2]);
 		return (add);
 	}
 	c_proc->error = 1;
@@ -70,7 +70,7 @@ int		add_reg_reg(unsigned char *board, t_proc *c_proc, int v, int *reg_nb)
 	{
 		add = ((c_proc->r[reg_nb2] + c_proc->r[reg_nb3])) % IDX_MOD;
 		if (v == 1)
-			cmd_verbose_sti(board, c_proc, c_proc->r[reg_nb2],
+			versti(board, c_proc, c_proc->r[reg_nb2],
 				c_proc->r[reg_nb3]);
 		return (add);
 	}
@@ -96,7 +96,7 @@ int		add_dir_reg(unsigned char *board, t_proc *c_proc, int v,
 	{
 		add = (c_proc->r[reg_nb2] + bit_cat(board, c_proc, id, 4)) % IDX_MOD;
 		if (v == 1)
-			cmd_verbose_sti(board, c_proc, bit_cat(board, c_proc, id, 4),
+			versti(board, c_proc, bit_cat(board, c_proc, id, 4),
 				c_proc->r[reg_nb2]);
 		return (add);
 	}

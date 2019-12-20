@@ -12,7 +12,7 @@
 
 #include "corewar.h"
 
-int		execute_dead_process(t_dbllist **pr_list, t_cor *core)
+int		exec_dead_proc(t_dbllist **pr_list, t_cor *core)
 {
 	t_elem		*tmp;
 	t_elem		*tmp_next;

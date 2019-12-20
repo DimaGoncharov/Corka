@@ -106,7 +106,7 @@ static void		print_b(t_cor *core, t_dbllist *proc_l, unsigned char *board)
 		print_menu(core, proc_l);
 }
 
-int				print_board(t_cor *core, t_dbllist *process_list,
+int				print_map(t_cor *core, t_dbllist *process_list,
 	unsigned char *board)
 {
 	char	c;

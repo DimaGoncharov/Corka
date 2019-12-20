@@ -12,7 +12,7 @@
 
 #include "corewar.h"
 
-int		corewar_usage(int argc)
+int		print_smth(int argc)
 {
 	if (argc == 0)
 		ft_putstr("Error in usage.\n");

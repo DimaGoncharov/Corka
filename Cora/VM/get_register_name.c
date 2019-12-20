@@ -12,7 +12,7 @@
 
 #include "corewar.h"
 
-int			get_register_name(unsigned char *board, t_proc *c_proc, int i[])
+int			get_reg_name(unsigned char *board, t_proc *c_proc, int i[])
 {
 	int		r_dest;
 

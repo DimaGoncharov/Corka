@@ -27,7 +27,7 @@ static void	dir_reg(unsigned char *board, t_proc *c_proc, int v)
 		else
 			c_proc->carry = 0;
 		if (v == 1)
-			cmd_verbose_ld(c_proc->pid, c_proc->r[reg_nb], reg_nb + 1);
+			verld(c_proc->pid, c_proc->r[reg_nb], reg_nb + 1);
 	}
 }
 
@@ -47,7 +47,7 @@ static void	ind_reg(unsigned char *board, t_proc *c_proc, int v)
 		else
 			c_proc->carry = 0;
 		if (v == 1)
-			cmd_verbose_ld(c_proc->pid, c_proc->r[reg_nb], reg_nb + 1);
+			verld(c_proc->pid, c_proc->r[reg_nb], reg_nb + 1);
 	}
 }
 
@@ -56,7 +56,7 @@ void		cmd_ld(unsigned char *board, t_proc *c_proc, t_cor *core)
 	int				cmd_size;
 	int				cmp;
 
-	cmd_size = get_cmd_size(get_type(board, c_proc), 4, 2);
+	cmd_size = size_cmd(get_type(board, c_proc), 4, 2);
 	if (c_proc->ctp == 5)
 	{
 		cmp = (board[(c_proc->i + 1) % MEM_SIZE] & 0xf0);
@@ -65,7 +65,7 @@ void		cmd_ld(unsigned char *board, t_proc *c_proc, t_cor *core)
 		else if (cmp == 0xd0)
 			ind_reg(board, c_proc, core->options.verbose);
 		if (core->options.verbose == 1)
-			cmd_verbose(board, c_proc, cmd_size);
+			verall(board, c_proc, cmd_size);
 		c_proc->ctp = 1;
 		c_proc->c_cmd = 0;
 		next_pc(cmd_size, c_proc, board);

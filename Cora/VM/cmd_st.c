@@ -40,7 +40,7 @@ static void		reg_ind(unsigned char *board, t_proc *c_proc, t_cor *core)
 	if (reg_nb < REG_NUMBER && reg_nb >= 0)
 	{
 		if (core->options.verbose == 1)
-			cmd_verbose_st(c_proc->pid, reg_nb + 1, id);
+			verst(c_proc->pid, reg_nb + 1, id);
 		result_st(core, c_proc, reg_nb, id);
 	}
 }
@@ -56,7 +56,7 @@ static void		reg_reg(unsigned char *board, t_proc *c_proc, int verbose)
 		(reg_nb2 < REG_NUMBER && reg_nb2 >= 0))
 	{
 		if (verbose == 1)
-			cmd_verbose_st(c_proc->pid, reg_nb2 + 1, reg_nb + 1);
+			verst(c_proc->pid, reg_nb2 + 1, reg_nb + 1);
 		c_proc->r[reg_nb] = c_proc->r[reg_nb2];
 	}
 }
@@ -69,7 +69,7 @@ void			cmd_st(unsigned char *board, t_proc *c_proc, t_cor *core)
 	if (c_proc->ctp == 5)
 	{
 		cmp = (board[(c_proc->i + 1) % MEM_SIZE] & 0xf0);
-		cmd_size = get_cmd_size(get_type(board, c_proc), 4, 2);
+		cmd_size = size_cmd(get_type(board, c_proc), 4, 2);
 		if (cmp == 0x70)
 			reg_ind(board, c_proc, core);
 		else if (cmp == 0x50)

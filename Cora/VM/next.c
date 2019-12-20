@@ -15,6 +15,6 @@
 void		next(unsigned char *board, t_proc *c_proc, int nb, int verbose)
 {
 	if (verbose == 1)
-		cmd_verbose(board, c_proc, nb);
+		verall(board, c_proc, nb);
 	next_pc(nb, c_proc, board);
 }

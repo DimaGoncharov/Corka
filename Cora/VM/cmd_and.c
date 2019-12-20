@@ -20,7 +20,7 @@ void			init_aox_a(t_aox *aox, t_proc *c_proc, t_cor *core, int i[])
 	aox->arg1 = get_arg_val((o_code & 0b11000000) >> 6, core->board, c_proc, i);
 	aox->arg2 = get_arg_val((o_code & 0b00110000) >> 4, core->board, c_proc, i);
 	if ((o_code & 0b00001100) >> 2 == 0b01)
-		aox->r_dest = get_register_name(core->board, c_proc, i);
+		aox->r_dest = get_reg_name(core->board, c_proc, i);
 	else
 		i[1] = -1;
 	if (i[1] == 0)
@@ -45,11 +45,11 @@ void			cmd_and(unsigned char *board, t_proc *c_proc, t_cor *core)
 			if (i[1] == 0)
 				ft_printf("P% 5d | and %d %d r%d\n", c_proc->pid, aox.arg1,
 					aox.arg2, aox.r_dest);
-			cmd_verbose(board, c_proc, (get_cmd_size(get_type(board, c_proc),
+			verall(board, c_proc, (size_cmd(get_type(board, c_proc),
 				4, 3)));
 		}
 		c_proc->c_cmd = 0;
-		next_pc(get_cmd_size(get_type(board, c_proc), 4, 3), c_proc, board);
+		next_pc(size_cmd(get_type(board, c_proc), 4, 3), c_proc, board);
 		c_proc->ctp = 1;
 	}
 	else

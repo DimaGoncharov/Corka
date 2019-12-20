@@ -32,9 +32,9 @@ void	cmd_aff(unsigned char *b, t_proc *c_proc, t_cor *core)
 			}
 		}
 		if (core->options.verbose == 1)
-			cmd_verbose(b, c_proc, get_cmd_size(get_type(b, c_proc), 4, 1));
+			verall(b, c_proc, size_cmd(get_type(b, c_proc), 4, 1));
 		c_proc->c_cmd = 0;
-		next_pc(get_cmd_size(get_type(b, c_proc), 4, 1), c_proc, b);
+		next_pc(size_cmd(get_type(b, c_proc), 4, 1), c_proc, b);
 		c_proc->ctp = 1;
 	}
 	else

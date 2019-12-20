@@ -49,7 +49,7 @@ static void	invalid_file(int error, t_var *var)
 	invalid_file2(error, var);
 }
 
-int			error_manager(int ret, t_var *var)
+int			manage_err(int ret, t_var *var)
 {
 	ft_putstr_fd("Error: ", 2);
 	if (ret == 0)

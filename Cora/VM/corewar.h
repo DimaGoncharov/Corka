@@ -102,40 +102,40 @@ typedef struct		s_proc
 **********************  Display  **********************
 */
 
-int					corewar_usage(int argc);
-void				ft_print_memory(unsigned char *ptr, int memsize);
-void				intro(t_dbllist *champ_list);
+int					print_smth(int argc);
+void				print_steps(unsigned char *ptr, int memsize);
+void				starting(t_dbllist *champ_list);
 
 /*
 **********************  Options  **********************
 */
 
-int					options_checkers(int argc, char **argv, t_options *options,
+int					chk_options(int argc, char **argv, t_options *options,
 	t_dbllist *champ_list);
-void				cmd_verbose(unsigned char *board, t_proc *c_proc,
+void				verall(unsigned char *board, t_proc *c_proc,
 	int offset);
-void				cmd_verbose_sti(unsigned char *board, t_proc *c_proc,
+void				versti(unsigned char *board, t_proc *c_proc,
 	int p1, int p2);
-void				cmd_verbose_st(int pid, int reg_nb, int id);
-void				cmd_verbose_ld(int pid, int reg_nb, int id);
-void				cmd_verbose_zjmp_live(char *cmd, int pid, int id);
+void				verst(int pid, int reg_nb, int id);
+void				verld(int pid, int reg_nb, int id);
+void				verlive(char *cmd, int pid, int id);
 
 /*
 **********************  Checkers  **********************
 */
 
-int					champions_maker(t_dbllist *champ_list, t_options *options,
+int					make_chmps(t_dbllist *champ_list, t_options *options,
 	t_var *var);
 
 /*
 **********************  Utils  **********************
 */
 
-int					error_manager(int ret, t_var *var);
-uintmax_t			ft_hextoi(unsigned char *str);
-char				*ft_hextoa(int *str, int size);
-unsigned char		*get_content(int *str, int size);
-int					reverse_byte(int buf, int readv);
+int					manage_err(int ret, t_var *var);
+uintmax_t			atoi_hexd(unsigned char *str);
+char				*itoa_hexd(int *str, int size);
+unsigned char		*get_cont(int *str, int size);
+int					rev_bytes(int buf, int readv);
 int					isreg(unsigned char *board, t_proc *c_proc, int *type,
 	int arg_nb);
 int					isdir(unsigned char *board, t_proc *c_proc, int *type,
@@ -148,16 +148,16 @@ int					isind(unsigned char *board, t_proc *c_proc, int *type,
 */
 
 unsigned char		*memory(void);
-void				init_board(t_dbllist *ch_list, t_dbllist *pr_list,
+void				init_map(t_dbllist *ch_list, t_dbllist *pr_list,
 	t_cor *core);
 
 /*
 **********************  Commands **********************
 */
 
-int					get_cmd_size(int *type, int label_size, int nb_param);
+int					size_cmd(int *type, int label_size, int nb_param);
 int					*get_type(unsigned char *board, t_proc *c_proc);
-int					get_register_name(unsigned char *board, t_proc *c_proc,
+int					get_reg_name(unsigned char *board, t_proc *c_proc,
 	int i[]);
 int					get_arg_val(int oc_trunc, unsigned char *board,
 	t_proc *c_proc, int i[]);
@@ -200,22 +200,22 @@ void				cmd_aff(unsigned char *board, t_proc *c_proc, t_cor *core);
 */
 
 void				init(t_cor *core, t_options *options);
-int					game_loop(t_cor *core, t_dbllist *ch_list,
+int					prog_loop(t_cor *core, t_dbllist *ch_list,
 	t_dbllist *pr_list);
-void				verbose_cycles(t_cor *core);
-int					execute_dead_process(t_dbllist **pr_list, t_cor *core);
-int					iscmd(t_proc *c_proc, t_cor *core, t_dbllist *ch_list,
+void				ver_loop(t_cor *core);
+int					exec_dead_proc(t_dbllist **pr_list, t_cor *core);
+int					is_comm(t_proc *c_proc, t_cor *core, t_dbllist *ch_list,
 	t_dbllist *pr_list);
-void				check_cmd(t_cor *core, t_dbllist **ch_list,
+void				chk_comm(t_cor *core, t_dbllist **ch_list,
 	t_dbllist **pr_list);
 
 /*
 **********************  Ncurses **********************
 */
 
-int					set_up_ncurses(t_cor *core);
-int					print_board(t_cor *core, t_dbllist *process_list,
+int					setup_ncurses(t_cor *core);
+int					print_map(t_cor *core, t_dbllist *process_list,
 	unsigned char *board);
-int					ncurs_finish(t_cor *core);
+int					ncurs_end(t_cor *core);
 
 #endif

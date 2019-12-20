@@ -25,7 +25,7 @@ void	hexdump_reverse(char const *trad, int fd)
 	while (i < len)
 	{
 		tmp = (unsigned char *)ft_strsub(trad, i, 2);
-		value = ft_hextoi(tmp);
+		value = atoi_hexd(tmp);
 		write(fd, &value, 1);
 		ft_strdel((char **)&tmp);
 		if (i + 2 < len)

@@ -12,7 +12,7 @@
 
 #include "corewar.h"
 
-void	ft_print_memory(unsigned char *ptr, int memsize)
+void	print_steps(unsigned char *ptr, int memsize)
 {
 	int		i;
 

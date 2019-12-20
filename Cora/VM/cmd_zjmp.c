@@ -14,7 +14,7 @@
 
 void	norm_zjmp(t_proc *c_proc, short int id)
 {
-	cmd_verbose_zjmp_live("zjmp", c_proc->pid, id);
+	verlive("zjmp", c_proc->pid, id);
 	if (c_proc->carry == 1)
 		write(1, " OK\n", 4);
 	else
@@ -38,7 +38,7 @@ void	cmd_zjmp(unsigned char *board, t_proc *c_proc, t_cor *core)
 		if (c_proc->carry == 0)
 		{
 			if (core->options.verbose == 1)
-				cmd_verbose(board, c_proc, 3);
+				verall(board, c_proc, 3);
 			next_pc(3, c_proc, board);
 		}
 		c_proc->c_cmd = 0;

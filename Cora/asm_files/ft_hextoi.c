@@ -29,7 +29,7 @@ static uintmax_t	ft_mini_power(int nb, int power)
 	return (value);
 }
 
-uintmax_t			ft_hextoi(unsigned char *str)
+uintmax_t			atoi_hexd(unsigned char *str)
 {
 	int					i;
 	int					j;

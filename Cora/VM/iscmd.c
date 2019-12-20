@@ -33,7 +33,7 @@ static int	iscmd_next(t_proc *c_proc, t_cor *core, t_dbllist *pr_list)
 	return (1);
 }
 
-int			iscmd(t_proc *c_proc, t_cor *core, t_dbllist *ch_list,
+int			is_comm(t_proc *c_proc, t_cor *core, t_dbllist *ch_list,
 	t_dbllist *pr_list)
 {
 	c_proc->i = c_proc->i % MEM_SIZE;
@@ -63,14 +63,14 @@ int			iscmd(t_proc *c_proc, t_cor *core, t_dbllist *ch_list,
 	return (1);
 }
 
-void		check_cmd(t_cor *core, t_dbllist **ch_list, t_dbllist **pr_list)
+void		chk_comm(t_cor *core, t_dbllist **ch_list, t_dbllist **pr_list)
 {
 	t_elem		*tmp;
 
 	tmp = (*pr_list)->head;
 	while (tmp != NULL)
 	{
-		if (iscmd(tmp->content, core, (*ch_list), (*pr_list)) == 0)
+		if (is_comm(tmp->content, core, (*ch_list), (*pr_list)) == 0)
 			next_pc(1, tmp->content, core->board);
 		tmp = tmp->next;
 	}

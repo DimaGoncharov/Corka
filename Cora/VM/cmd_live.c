@@ -50,9 +50,9 @@ void			cmd_live(unsigned char *board, t_proc *c_proc, t_cor *core,
 		c_proc->last_lived = 0;
 		if (core->options.verbose == 1)
 		{
-			cmd_verbose_zjmp_live("live", c_proc->pid, (int)vm_num_live);
+			verlive("live", c_proc->pid, (int)vm_num_live);
 			write(1, "\n", 1);
-			cmd_verbose(board, c_proc, 5);
+			verall(board, c_proc, 5);
 		}
 		c_proc->c_cmd = 0;
 		next_pc(5, c_proc, board);

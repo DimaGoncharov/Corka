@@ -72,11 +72,11 @@ void		cmd_lldi(unsigned char *board, t_proc *c_proc, t_cor *core)
 
 	if (c_proc->ctp == 50)
 	{
-		cmd_size = get_cmd_size(get_type(board, c_proc), 2, 3);
+		cmd_size = size_cmd(get_type(board, c_proc), 2, 3);
 		if (valid_opc(board, c_proc) == 1)
 			is_valid_opc(core, c_proc, board, cmd_size);
 		if (core->options.verbose == 1)
-			cmd_verbose(board, c_proc, cmd_size);
+			verall(board, c_proc, cmd_size);
 		c_proc->c_cmd = 0;
 		next_pc(cmd_size, c_proc, board);
 		c_proc->ctp = 1;

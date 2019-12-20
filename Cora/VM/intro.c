@@ -12,7 +12,7 @@
 
 #include "corewar.h"
 
-void	intro(t_dbllist *champ_list)
+void	starting(t_dbllist *champ_list)
 {
 	t_elem	*tmp;
 

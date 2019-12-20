@@ -32,7 +32,7 @@ int			get_arg_val(int oc_trunc, unsigned char *board, t_proc *c_proc,
 	}
 	else if (oc_trunc == 0b01)
 	{
-		arg = get_register_name(board, c_proc, i);
+		arg = get_reg_name(board, c_proc, i);
 		if (i[1] == 0)
 			arg = c_proc->r[arg - 1];
 		return (arg);

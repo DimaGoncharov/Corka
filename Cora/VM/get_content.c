@@ -37,7 +37,7 @@ static void				tolower(unsigned char *content, int tmp)
 	}
 }
 
-unsigned char			*get_content(int *str, int size)
+unsigned char			*get_cont(int *str, int size)
 {
 	unsigned char	*content;
 	unsigned char	*nb;

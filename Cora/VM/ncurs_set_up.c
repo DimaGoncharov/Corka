@@ -29,7 +29,7 @@ static void		init_ncurses(void)
 	init_pair(7, COLOR_WHITE, COLOR_BLACK);
 }
 
-int				set_up_ncurses(t_cor *core)
+int				setup_ncurses(t_cor *core)
 {
 	WINDOW * gauche;
 	WINDOW * droite;

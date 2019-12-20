@@ -12,7 +12,7 @@
 
 #include "corewar.h"
 
-char	*ft_hextoa(int *str, int size)
+char	*itoa_hexd(int *str, int size)
 {
 	int		i;
 	int		j;

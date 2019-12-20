@@ -26,7 +26,7 @@ int		param_3(int nb_param, int *type, int label_size, int size)
 	return (size);
 }
 
-int		get_cmd_size(int *type, int label_size, int nb_param)
+int		size_cmd(int *type, int label_size, int nb_param)
 {
 	int		size;
 

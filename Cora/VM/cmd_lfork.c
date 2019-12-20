@@ -37,7 +37,7 @@ void		cmd_lfork(unsigned char *board, t_proc *c_proc,
 		{
 			ft_printf("P% 5d | lfork %d (%d)\n", c_proc->pid, value,
 				(c_proc->i + value));
-			cmd_verbose(board, c_proc, 3);
+			verall(board, c_proc, 3);
 		}
 		norm_lfork(tmp, c_proc, value, board);
 		core->pid += 1;

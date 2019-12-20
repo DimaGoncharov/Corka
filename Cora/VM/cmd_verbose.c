@@ -42,7 +42,7 @@ static void		cmd_verbose2(unsigned char *board, char *hex2,
 	write(1, "\n", 1);
 }
 
-void			cmd_verbose(unsigned char *board, t_proc *c_proc, int offset)
+void			verall(unsigned char *board, t_proc *c_proc, int offset)
 {
 	int				i;
 	char			*hex1;
@@ -71,7 +71,7 @@ void			cmd_verbose(unsigned char *board, t_proc *c_proc, int offset)
 	cmd_verbose2(board, hex2, offset, c_proc);
 }
 
-void			cmd_verbose_sti(unsigned char *board, t_proc *c_proc, int p1,
+void			versti(unsigned char *board, t_proc *c_proc, int p1,
 	int p2)
 {
 	write(1, "P", 1);
@@ -93,7 +93,7 @@ void			cmd_verbose_sti(unsigned char *board, t_proc *c_proc, int p1,
 	write(1, ")\n", 2);
 }
 
-void			cmd_verbose_st(int pid, int reg_nb, int id)
+void			verst(int pid, int reg_nb, int id)
 {
 	write(1, "P", 1);
 	if (pid < 10)
@@ -114,7 +114,7 @@ void			cmd_verbose_st(int pid, int reg_nb, int id)
 	write(1, "\n", 1);
 }
 
-void			cmd_verbose_ld(int pid, int reg_nb, int id)
+void			verld(int pid, int reg_nb, int id)
 {
 	write(1, "P", 1);
 	ft_printf("% 5d", pid);

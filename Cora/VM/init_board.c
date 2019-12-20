@@ -31,7 +31,7 @@ static void	content_to_board(t_elem *champ, t_cor *core,
 	{
 		str[0] = (((t_champ *)(champ->content))->content[j]);
 		str[1] = (((t_champ *)(champ->content))->content[j + 1]);
-		core->board[i] = (unsigned char)ft_hextoi(str);
+		core->board[i] = (unsigned char)atoi_hexd(str);
 		core->color_map[i] = ((t_champ *)(champ->content))->id;
 		j += 2;
 		i += 1;
@@ -42,7 +42,7 @@ static void	content_to_board(t_elem *champ, t_cor *core,
 	free(str);
 }
 
-void		init_board(t_dbllist *ch_list, t_dbllist *pr_list, t_cor *core)
+void		init_map(t_dbllist *ch_list, t_dbllist *pr_list, t_cor *core)
 {
 	t_elem	*champ;
 	t_proc	proc;

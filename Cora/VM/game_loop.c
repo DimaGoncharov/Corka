@@ -33,7 +33,7 @@ void			init(t_cor *core, t_options *options)
 		core->options.cycle = 0;
 		core->options.bool_dump = 0;
 		core->options.bool_vm_number = 0;
-		set_up_ncurses(core);
+		setup_ncurses(core);
 	}
 }
 
@@ -61,7 +61,7 @@ static void		set_new_era(t_cor *core, t_dbllist *pr_list)
 
 static void		end_era(t_dbllist **process_list, t_cor *core)
 {
-	core->end = execute_dead_process(process_list, core);
+	core->end = exec_dead_proc(process_list, core);
 	if (core->era_lives_counter >= NBR_LIVE || (core->check + 1) == MAX_CHECKS)
 		set_new_era(core, *process_list);
 	else
@@ -84,13 +84,13 @@ static void		last_lived_add(t_dbllist **pr_list)
 	}
 }
 
-int				game_loop(t_cor *core, t_dbllist *ch_list, t_dbllist *pr_list)
+int				prog_loop(t_cor *core, t_dbllist *ch_list, t_dbllist *pr_list)
 {
 	if (core->options.cycle == 1 && core->cycles != 0)
-		verbose_cycles(core);
-	check_cmd(core, &ch_list, &pr_list);
+		ver_loop(core);
+	chk_comm(core, &ch_list, &pr_list);
 	if (core->options.ncurse == 1)
-		print_board(core, pr_list, core->board);
+		print_map(core, pr_list, core->board);
 	if (core->cycles_to_die <= 0 ||
 		(((core->era_cycles + 1) % core->cycles_to_die) == 1 &&
 			(core->cycles != 0)))
@@ -98,7 +98,7 @@ int				game_loop(t_cor *core, t_dbllist *ch_list, t_dbllist *pr_list)
 	if (core->options.bool_dump == 1 &&
 		core->cycles == core->options.dump_number)
 	{
-		ft_print_memory(core->board, MEM_SIZE);
+		print_steps(core->board, MEM_SIZE);
 		return (1);
 	}
 	last_lived_add(&pr_list);

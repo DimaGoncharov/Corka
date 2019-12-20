@@ -40,17 +40,17 @@ int			main(int argc, char **argv)
 	ft_bzero(&options, sizeof(t_options));
 	champ_list = ft_lstdblnew();
 	process_list = ft_lstdblnew();
-	if (!corewar_usage(argc))
+	if (!print_smth(argc))
 		return (-1);
-	if (options_checkers(argc, argv, &options, champ_list) == 0)
+	if (chk_options(argc, argv, &options, champ_list) == 0)
 		return (0);
 	init(&core, &options);
-	intro(champ_list);
-	init_board(champ_list, process_list, &core);
-	while (game_loop(&core, champ_list, process_list) != 1)
+	starting(champ_list);
+	init_map(champ_list, process_list, &core);
+	while (prog_loop(&core, champ_list, process_list) != 1)
 		;
 	if (options.ncurse == 1)
-		ncurs_finish(&core);
+		ncurs_end(&core);
 	check_winner(&core, champ_list);
 	return (0);
 }

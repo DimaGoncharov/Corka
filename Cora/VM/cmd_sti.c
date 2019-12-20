@@ -28,7 +28,7 @@ static int	add_dir_ind(unsigned char *board, t_proc *c_proc, int v,
 	{
 		add = (p2 + bit_cat(board, c_proc, id, 4)) % IDX_MOD;
 		if (v == 1)
-			cmd_verbose_sti(board, c_proc, bit_cat(board, c_proc, id, 4), p2);
+			versti(board, c_proc, bit_cat(board, c_proc, id, 4), p2);
 		return (add);
 	}
 	c_proc->error = 1;
@@ -50,7 +50,7 @@ static int	add_ind_ind(unsigned char *board, t_proc *c_proc, int v,
 	{
 		add = (p1 + p2) % IDX_MOD;
 		if (v == 1)
-			cmd_verbose_sti(board, c_proc, p1, p2);
+			versti(board, c_proc, p1, p2);
 		return (add);
 	}
 	c_proc->error = 1;
@@ -72,7 +72,7 @@ static int	add_reg_ind(unsigned char *board, t_proc *c_proc, int v,
 	{
 		add = (c_proc->r[reg_nb2] + bit_cat(board, c_proc, 4, 2)) % IDX_MOD;
 		if (v == 1)
-			cmd_verbose_sti(board, c_proc, c_proc->r[reg_nb2],
+			versti(board, c_proc, c_proc->r[reg_nb2],
 				bit_cat(board, c_proc, 4, 2));
 		return (add);
 	}
@@ -113,10 +113,10 @@ void		cmd_sti(unsigned char *board, t_proc *c_proc, t_cor *core)
 	cmd_size = 0;
 	if (c_proc->ctp == 25)
 	{
-		cmd_size = get_cmd_size(get_type(board, c_proc), 2, 3);
+		cmd_size = size_cmd(get_type(board, c_proc), 2, 3);
 		valid_sti(board, c_proc, core);
 		if (core->options.verbose == 1)
-			cmd_verbose(board, c_proc, cmd_size);
+			verall(board, c_proc, cmd_size);
 		c_proc->c_cmd = 0;
 		next_pc(cmd_size, c_proc, board);
 		c_proc->ctp = 1;

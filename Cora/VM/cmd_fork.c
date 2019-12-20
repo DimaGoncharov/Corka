@@ -38,7 +38,7 @@ void		cmd_fork(unsigned char *board, t_proc *c_proc,
 		{
 			ft_printf("P% 5d | fork %d (%d)\n", c_proc->pid, value,
 				c_proc->i + (value % IDX_MOD));
-			cmd_verbose(board, c_proc, 3);
+			verall(board, c_proc, 3);
 		}
 		norm_fork(tmp, c_proc, value, board);
 		core->pid += 1;

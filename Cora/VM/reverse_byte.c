@@ -12,7 +12,7 @@
 
 #include "corewar.h"
 
-int				reverse_byte(int buf, int readv)
+int				rev_bytes(int buf, int readv)
 {
 	if (readv == (sizeof(int)))
 		return (((buf >> 24) & 0xff) |

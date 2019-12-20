@@ -12,7 +12,7 @@
 
 #include "corewar.h"
 
-int		ncurs_finish(t_cor *core)
+int		ncurs_end(t_cor *core)
 {
 	delwin(core->windows[0]);
 	delwin(core->windows[1]);
