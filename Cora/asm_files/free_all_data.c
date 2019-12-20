@@ -67,7 +67,7 @@ static void	free_lst_recup(t_dbllist **lst)
 	while (tmp != NULL)
 	{
 		if (((t_recup *)((tmp)->content)))
-			free_t_recup(((t_recup *)((tmp)->content)));
+			t_recup_free(((t_recup *)((tmp)->content)));
 		free(tmp->content);
 		tmp->content = NULL;
 		tmp_next = tmp->next;
@@ -104,7 +104,7 @@ static void	free_label_kw(t_dbllist **lst)
 	*lst = NULL;
 }
 
-void		free_all_data(t_data *data)
+void		all_data_free(t_data *data)
 {
 	if (data != NULL)
 	{

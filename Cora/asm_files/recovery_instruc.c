@@ -79,7 +79,7 @@ int			instruct_chekus(char *line, char **name, t_data **data,
 	make_args_tab(line, *name, &recup);
 	if (!(args_checkus(recup.args_tab, recup.op_code, data)))
 	{
-		free_t_recup(&recup);
+		t_recup_free(&recup);
 		return (0);
 	}
 	if (g_op_tab[recup.op_code - 1].octcod == 1)

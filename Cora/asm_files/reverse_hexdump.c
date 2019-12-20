@@ -12,7 +12,7 @@
 
 #include "asm.h"
 
-void	reverse_hexdump(char const *trad, int fd)
+void	hexdump_reverse(char const *trad, int fd)
 {
 	uintmax_t		value;
 	int				i;

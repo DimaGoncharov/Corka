@@ -40,7 +40,7 @@ static char		*recup_only_name(char *file_name)
 	return (tmp);
 }
 
-void			create_cor(t_data *data, char *file_name)
+void			cora_sozdatel(t_data *data, char *file_name)
 {
 	int		fd;
 	char	*tmp;
@@ -58,7 +58,7 @@ void			create_cor(t_data *data, char *file_name)
 		O_CREAT | O_TRUNC, S_IRUSR | S_IWUSR | S_IRGRP | S_IROTH);
 	close(fd);
 	open(name, O_WRONLY);
-	reverse_hexdump(data->tmp_trad, fd);
+	hexdump_reverse(data->tmp_trad, fd);
 	close(fd);
 	ft_printf("Writing output program to %s\n", name);
 	ft_strdel(&name);

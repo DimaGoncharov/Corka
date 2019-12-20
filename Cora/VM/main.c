@@ -21,7 +21,7 @@ static void	check_winner(t_cor *core, t_dbllist *ch_list)
 	{
 		if (core->winner_nb == ((t_champ *)(tmp->content))->vm_number)
 		{
-			ft_printf("Do you know that player %d(%s) won!!!\n",
+			ft_printf("Do you know that player %d(%s) won?!!!\n",
 				((t_champ *)(tmp->content))->id,
 				((t_champ *)(tmp->content))->name);
 		}

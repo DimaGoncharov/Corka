@@ -197,20 +197,20 @@ void				trad_to_ok(t_dbllist **lst_lines, char *lbl_called,
 					int i_called);
 void				modif_trad(int i, int j, char *trad, char **tmp_trad);
 uintmax_t			ft_hextoi(unsigned char *str);
-void				reverse_hexdump(char const *trad, int fd);
+void				hexdump_reverse(char const *trad, int fd);
 
 /*
 **********************  Output  ***********************
 */
 
-void				create_cor(t_data *data, char *file_name);
+void				cora_sozdatel(t_data *data, char *file_name);
 
 /*
 **********************  No leaks  **********************
 */
 
-void				free_all_data(t_data *data);
-void				free_tab_char(char ***tab);
-void				free_t_recup(t_recup *recup);
+void				all_data_free(t_data *data);
+void				tab_char_free(char ***tab);
+void				t_recup_free(t_recup *recup);
 
 #endif

@@ -36,7 +36,7 @@ void	free_lst_hexa(t_dbllist **lst_hexa)
 	*lst_hexa = NULL;
 }
 
-void	free_t_recup(t_recup *recup)
+void	t_recup_free(t_recup *recup)
 {
 	if (recup->label_name)
 		ft_strdel(&(recup->label_name));
