@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: kvignau <marvin@42.fr>                     +#+  +:+       +#+         #
+#    By: ptorchbu <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2016/01/04 10:52:32 by kvignau           #+#    #+#              #
-#    Updated: 2016/12/02 06:26:20 by mchevall         ###   ########.fr        #
+#    Created: 2019/12/21 17:46:23 by ptorchbu          #+#    #+#              #
+#    Updated: 2019/12/21 17:46:27 by ptorchbu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,53 +15,53 @@ NAME = ../corewar
 FLAGS = -Wall -Werror -Wextra
 
 SRC = main.c
-SRC += corewar_usage.c
-SRC += options_checkers.c
-SRC += champions_maker.c
+SRC += error_core.c
+SRC += checker.c
+SRC += create_champ.c
 SRC += ft_print_memory.c
 SRC += memory.c
-SRC += ft_hextoa.c
-SRC += get_content.c
-SRC += ft_hextoi.c
-SRC += init_board.c
-SRC += intro.c
-SRC += cmd_aff.c
-SRC += cmd_fork.c
-SRC += next_pc.c
+SRC += hextoa.c
+SRC += get_cont.c
+SRC += hextoi.c
+SRC += init_map.c
+SRC += starting.c
+SRC += aff.c
+SRC += fork.c
+SRC += process_next.c
 SRC += cmd_ld.c
 SRC += cmd_lfork.c
-SRC += bit_cat.c
+SRC += cat_bit.c
 SRC += cmd_ldi.c
 SRC += cmd_st.c
 SRC += cmd_add.c
 SRC += cmd_sub.c
-SRC += cmd_zjmp.c
+SRC += jmp.c
 SRC += get_type.c
 SRC += cmd_lld.c
 SRC += get_cmd_size.c
-SRC += cmd_lldi.c
+SRC += lldi.c
 SRC += cmd_and.c
 SRC += cmd_or.c
 SRC += cmd_xor.c
-SRC += get_arg_val.c
-SRC += get_register_name.c
+SRC += argval_get.c
+SRC += name_of_reg.c
 SRC += isdir.c
 SRC += isind.c
 SRC += isreg.c
-SRC += cmd_sti.c
-SRC += cmd_live.c
+SRC += sticmd.c
+SRC += live.c
 SRC += iscmd.c
-SRC += execute_dead_process.c
-SRC += opt_sti.c
-SRC += cmd_verbose.c
-SRC += ncurs_set_up.c
-SRC += ncurs_finish.c
-SRC += ncurs_print_board.c
+SRC += dead_proc_exec.c
+SRC += add_dir_reg.c
+SRC += verbose.c
+SRC += setup_ncurses.c
+SRC += ncurs_end.c
+SRC += print_map.c
 SRC += next.c
-SRC += verbose2.c
-SRC += game_loop.c
-SRC += error_manager.c
-SRC += reverse_byte.c
+SRC += verbs2.c
+SRC += prog_lp.c
+SRC += err_manage.c
+SRC += bytes_rev.c
 
 OBJ = $(SRC:%.c=%.o)
 

@@ -1,4 +1,14 @@
-
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: ptorchbu <marvin@42.fr>                    +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2019/12/21 17:39:09 by ptorchbu          #+#    #+#              #
+#    Updated: 2019/12/21 17:39:15 by ptorchbu         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
 
 NAME = ../asm
 
@@ -10,34 +20,34 @@ SRC += head_file.c
 SRC += initializer.c
 SRC += changer.c
 SRC += ft_comm.c
-SRC += recovery.c
+SRC += vosstanovilka.c
 SRC += ft_manag_head.c
 SRC += ft_manag_name.c
 SRC += ft_manag_comm.c
 SRC += ft_out.c
-SRC += free_all_data.c
-SRC += recovery_instruc.c
-SRC += noleaks.c
-SRC += check_arg.c
+SRC += clean_all.c
+SRC += rec_instruct.c
+SRC += leak_off.c
+SRC += args_checkus.c
 SRC += check_type.c
-SRC += which_arg.c
-SRC += trad.c
-SRC += trad_reg_ind.c
+SRC += choose_args.c
+SRC += trade.c
+SRC += trans_reg.c
 SRC += ft_label_char.c
-SRC += common.c
+SRC += general.c
 SRC += ft_manag_lab.c
 SRC += label.c
 SRC += label_1.c
-SRC += final_trad.c
+SRC += ultimate_trans.c
 SRC += create_file.c
 SRC += initializer1.c
-SRC += recovery_label.c
-SRC += define_arg.c
-SRC += trad_dir.c
+SRC += rec_lab.c
+SRC += determ_arg.c
+SRC += transdir.c
 SRC += label_2.c
-SRC += ft_hextoi.c
-SRC += reverse_hexdump.c
-SRC += add_f.c
+SRC += hexta.c
+SRC += hexta_reverse.c
+SRC += func_add.c
 
 OBJ = $(SRC:%.c=%.o)
 
