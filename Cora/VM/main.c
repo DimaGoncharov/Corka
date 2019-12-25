@@ -41,9 +41,9 @@ int			main(int argc, char **argv)
 	champ_list = ft_lstdblnew();
 	process_list = ft_lstdblnew();
 	if (!print_smth(argc))
-		return (-1);
+		exit(-1);
 	if (chk_options(argc, argv, &options, champ_list) == 0)
-		return (0);
+		exit(0);
 	init(&core, &options);
 	starting(champ_list);
 	init_map(champ_list, process_list, &core);
@@ -52,5 +52,5 @@ int			main(int argc, char **argv)
 	if (options.ncurse == 1)
 		ncurs_end(&core);
 	check_winner(&core, champ_list);
-	return (0);
+	exit(0);
 }

@@ -29,12 +29,12 @@ int			main(int argc, char **argv)
 	if (!(vosstanovilka(data)))
 	{
 		all_data_free(data);
-		return (0);
+		exit(0);
 	}
 	tmp_trad_to_str(&data);
 	trad_dir_label(&data);
 	final_trad(data, ft_strlen(data->tmp_trad) / 2);
 	cora_sozdatel(data, argv[1]);
 	all_data_free(data);
-	return (0);
+	exit(0);
 }
