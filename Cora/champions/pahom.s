@@ -1,5 +1,5 @@
-.name "NOm_nOM"
-.comment "Plus je dors plus je suis fatigue"
+.name "Pahom"
+.comment "Kak pospal, bratishka?!"
 
 
 	ld %16777216, r2 # 01 00 00 00
